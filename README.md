@@ -1,5 +1,5 @@
-# Machine Learning Engineer Nanodegree
-# Supervised Learning
+# Machine Learning Engineer Nanodegree - Project 3
+# UnSupervised Learning
 ## Project: Creating Customer Segments
 
 ### Install
