@@ -13163,13 +13163,16 @@ inputs and waypoint are most relevant features for learning both safety and effi
 
 left/right/oncoming - The direction of travel for other traffic is important to determine whether it's safe to proceed, otherwise a collision could result.
 
+</code></pre>
+<p>inputs from traffic coming right can be removed. So, clear explanation will be if cab is on right side there are few cases that can occur which are as follows:-</p>
+
+<pre><code>- If light is red, cab will not go forward. It will not move at all when signal is red. So, it will not matter if on making a right turn on red signal whether there any rule breaks or collisions because lane separation is present and any incoming vehicle will not collide anyway like that due to different directions.
+  - If light is green, cab will go forward. It can take right turn as well. So, if any collision or accident happens it will occur due to other vehicle only.
 
 </code></pre>
-<p>2) Efficiency
-    waypoint - The waypoint is most appropriate for achieving efficiency. This will ensure the smartcab reaches the destination in the most efficient manner possible.</p>
+<p>2) Efficiency</p>
+<p>waypoint - The waypoint is most appropriate for achieving efficiency. This will ensure the smartcab reaches the destination in the most efficient manner possible.</p>
 <p>deadline is not included because no more parameters related to deadline is given. Moreover, it can be achieved with the help of learning from waypoint. deadline is important in a sense to cover the distance in time but it can be covered if covering path is less with the help of waypoint. Including deadline can increase the time complexity.</p>
-<p>One more thing I understood is related to inputs: right</p>
-<p>This parameter indicates if there are vehicle present on the right and its intented action/direction: None, forward, left or right. If there is a vehicle present and the inputs: light is red, the Smartcab agent should not go forward or left in any case, so knowing if there is a car on the right does not provide any additional information. Similarly, making a right turn on red, does not require any information on if there is a vehicle on the right, since the lane that the right vehicle is on is separate for the direction of travel. As for the inputs: light is green cases, this is only valid for the case of the smartcab going forward, but this means the Smartcab agent has the right way, so any accident would be the fault of the vehicle on the right making a decision that is not following with Traffic Laws. So, it will not be smart cab's error.</p>
 
 </div>
 </div>
@@ -13206,7 +13209,7 @@ waypoint - left, right and forward - 3 cases</p>
     left and oncoming - None, left, right and forward -4 x 4</p>
 <p>size of state space = 3x2x4x4 = 96</p>
 <p>state space is reasonable, with hundreds of training trials it will learn the optimal action for any state.
-NOTE: according to US laws input turning left has been be removed.</p>
+NOTE: according to US laws input turning right has been be removed.</p>
 
 </div>
 </div>
