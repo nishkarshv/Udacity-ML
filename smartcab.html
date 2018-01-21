@@ -13168,6 +13168,8 @@ left/right/oncoming - The direction of travel for other traffic is important to 
 <p>2) Efficiency
     waypoint - The waypoint is most appropriate for achieving efficiency. This will ensure the smartcab reaches the destination in the most efficient manner possible.</p>
 <p>deadline is not included because no more parameters related to deadline is given. Moreover, it can be achieved with the help of learning from waypoint. deadline is important in a sense to cover the distance in time but it can be covered if covering path is less with the help of waypoint. Including deadline can increase the time complexity.</p>
+<p>One more thing I understood is related to inputs: right</p>
+<p>This parameter indicates if there are vehicle present on the right and its intented action/direction: None, forward, left or right. If there is a vehicle present and the inputs: light is red, the Smartcab agent should not go forward or left in any case, so knowing if there is a car on the right does not provide any additional information. Similarly, making a right turn on red, does not require any information on if there is a vehicle on the right, since the lane that the right vehicle is on is separate for the direction of travel. As for the inputs: light is green cases, this is only valid for the case of the smartcab going forward, but this means the Smartcab agent has the right way, so any accident would be the fault of the vehicle on the right making a decision that is not following with Traffic Laws. So, it will not be smart cab's error.</p>
 
 </div>
 </div>
@@ -16500,12 +16502,12 @@ Overall, the ratings of the Smartcab are satisfactory and the decision making se
  -- left : 0.00</p>
 <p>Hence, we are getting good safety and reliability ratings based on the actions performed above.</p>
 <p>There are some states where the policy is different from the optimal policy.</p>
-<p>('left', 'green', None, 'right', None)
- -- forward : 0.01
- -- right : 0.01
- -- None : -0.05
- -- left : 0.19</p>
-<p>In this case, the optimal action should be turning left directly, however, the driving agent may choose to go forward. It won't cause accident but will delay the arriving time. We may need more trials to learning the optimal Q-table, since there are very limited number of states till now.
+<p>('right', 'green', None, 'forward', 'left')
+ -- forward : 0.06
+ -- right : 0.00
+ -- None : -0.06
+ -- left : 0.00</p>
+<p>In this case, the optimal action should be turning right directly, however, the driving agent may choose to go forward as  Reward is more on moving forward than right making agent to chose forward. It won't cause accident but will delay the arriving time. We may need more trials to learning the optimal Q-table, since there are very limited number of states till now.
  Mostly it worked fine but in some cases during training it failed to learn from previous actions due to limited number of trials performed, if we have better decay function with large number of trials may be the agent would have behaved optimally as according to optimal policy.</p>
 
 </div>
