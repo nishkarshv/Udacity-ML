@@ -1,5 +1,5 @@
-# Content: Supervised Learning
-## Project: Finding Donors for CharityML
+# Content: Capstone Project for Advanced Nanodegree
+## Project: Toxic Comment Classification of Wikipedia Comments
 
 ## Project Overview
 Proposal for the project is based on Toxic Comments featured in feeds, tweets and comments on
